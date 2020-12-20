@@ -17,9 +17,22 @@ namespace _01_ByteBank
             contaDaGabriela.numero = 458796;
             contaDaGabriela.saldo = 2000;
 
-            contaDaGabriela.Sacar(2005);
+            Console.WriteLine("Saldo Inicial Gabriela: R$" + contaDaGabriela.saldo);
 
-            Console.WriteLine(contaDaGabriela.saldo);
+
+            ContaCorrente contaDoBruno = new ContaCorrente();
+
+            contaDoBruno.titular = "Gabriela";
+            contaDoBruno.agencia = 4488;
+            contaDoBruno.numero = 423654;
+            contaDoBruno.saldo = 1000;
+
+            Console.WriteLine("Saldo Inicial Bruno: R$" + contaDoBruno.saldo);
+
+            contaDoBruno.Transferir(400, contaDaGabriela);
+
+            Console.WriteLine("Saldo da Gabriela após a tranferência R$" + contaDaGabriela.saldo);
+            Console.WriteLine("Saldo do Bruno após a tranferência R$" + contaDoBruno.saldo);
 
             Console.ReadLine();
         }
