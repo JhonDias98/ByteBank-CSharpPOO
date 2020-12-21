@@ -12,7 +12,8 @@ namespace _02_ByteBank_Herança_Interface.Funcionarios
         public string CPF { get; set; }
         public double Salario { get; set; }
 
-        public double GetBonificacao()
+        //Virtual permite que as classes filhas sobreescrevam o método
+        public virtual double GetBonificacao()
         {
             return Salario * 0.10;
         }

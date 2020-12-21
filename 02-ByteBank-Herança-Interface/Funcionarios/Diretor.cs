@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace _02_ByteBank_Herança_Interface.Funcionarios
 {
-    class Diretor
+    //Usar ':' para herança
+    class Diretor : Funcionario
     {
-        public string Nome { get; set; }
-        public string CPF { get; set; }
-        public double Salario { get; set; }
-
-
-        public double GetBonificacao()
+        //Override sobreescreve o método
+        public override double GetBonificacao()
         {
             return Salario;
         }
