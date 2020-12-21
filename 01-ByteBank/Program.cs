@@ -10,30 +10,40 @@ namespace _01_ByteBank
     {
         static void Main(string[] args)
         {
-            ContaCorrente contaDaGabriela = new ContaCorrente();
+            Cliente gabriela = new Cliente("Gabriela", "Desenvolvedora C#", "487.698.321-12");
 
-            contaDaGabriela.titular = "Gabriela";
-            contaDaGabriela.agencia = 4488;
-            contaDaGabriela.numero = 458796;
-            contaDaGabriela.saldo = 2000;
-
-            Console.WriteLine("Saldo Inicial Gabriela: R$" + contaDaGabriela.saldo);
+            ContaCorrente contaDaGabriela = new ContaCorrente(4488, 458796);
+            contaDaGabriela.Titular = gabriela;
+            contaDaGabriela.Saldo = 1000;
+            Console.WriteLine("Saldo Inicial Gabriela: R$" + contaDaGabriela.Saldo);
 
 
-            ContaCorrente contaDoBruno = new ContaCorrente();
+            Cliente bruno = new Cliente("Bruno", "Desenvolvedor C#", "484.324.924-31");
 
-            contaDoBruno.titular = "Gabriela";
-            contaDoBruno.agencia = 4488;
-            contaDoBruno.numero = 423654;
-            contaDoBruno.saldo = 1000;
+            ContaCorrente contaDoBruno = new ContaCorrente(4488, 423654);
+            contaDoBruno.Titular = bruno;
+            contaDoBruno.Saldo = 1000;
+            Console.WriteLine("Saldo Inicial Bruno: R$" + contaDoBruno.Saldo);
 
-            Console.WriteLine("Saldo Inicial Bruno: R$" + contaDoBruno.saldo);
+            contaDoBruno.Transferir(500, contaDaGabriela);
 
-            contaDoBruno.Transferir(400, contaDaGabriela);
+            Console.WriteLine("Saldo da Gabriela após a tranferência R$" + contaDaGabriela.Saldo);
+            Console.WriteLine("Saldo do Bruno após a tranferência R$" + contaDoBruno.Saldo);
 
-            Console.WriteLine("Saldo da Gabriela após a tranferência R$" + contaDaGabriela.saldo);
-            Console.WriteLine("Saldo do Bruno após a tranferência R$" + contaDoBruno.saldo);
 
+            //Atribuindo a instância do Cliente direto no titular
+            ContaCorrente conta = new ContaCorrente(4488, 696423);
+
+            conta.Titular = new Cliente("Jonathan", "Desenvolvedor Junior", "487.548.631-54");
+            conta.Saldo = 3500;
+
+            if(conta.Titular == null)
+            {
+                Console.WriteLine("A referência em conta.titular é NULL");
+            }
+
+            Console.WriteLine(ContaCorrente.TotalDeContasCriadas);
+            
             Console.ReadLine();
         }
     }

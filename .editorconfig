@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0122: "Cliente.nome" é inacessível devido ao seu nível de proteção
+dotnet_diagnostic.CS0122.severity = error
