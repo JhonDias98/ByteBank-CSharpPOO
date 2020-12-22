@@ -9,7 +9,12 @@ namespace _02_ByteBank_Herança_Interface.Funcionarios
     //Usar ':' para herança
     class Diretor : Funcionario
     {
-        public Diretor(string cpf) : base(cpf) { }
+        public Diretor( string cpf) : base(5000, cpf) { }
+
+        public override void AumentarSalario()
+        {
+            Salario *= 1.15;
+        }
 
         //Override sobreescreve o método
         public override double GetBonificacao()

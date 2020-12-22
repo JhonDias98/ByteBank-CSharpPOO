@@ -13,15 +13,13 @@ namespace _02_ByteBank_Herança_Interface
         {
             GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
 
-            Funcionario jonathan = new Funcionario("456.123.789-19");
+            Funcionario jonathan = new Funcionario(2000, "456.123.789-19");
             jonathan.Nome = "Jonathan";
-            jonathan.Salario = 2000;
 
             gerenciador.Registrar(jonathan);
 
             Diretor jones = new Diretor("852.741.963-91");
             jones.Nome = "Jones";
-            jones.Salario = 5000;
 
             gerenciador.Registrar(jones);
 
