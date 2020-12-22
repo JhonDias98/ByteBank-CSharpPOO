@@ -21,15 +21,9 @@ namespace _02_ByteBank_Herança_Interface.Funcionarios
             TotalDeFuncionarios++;
         }
 
-        public virtual void AumentarSalario()
-        {
-            Salario *= 1.1; 
-        }
+        public abstract void AumentarSalario();
 
-        //Virtual permite que as classes filhas sobreescrevam o método
-        public virtual double GetBonificacao()
-        {
-            return Salario * 0.10;
-        }
+        public abstract double GetBonificacao();
+        
     }
 }
