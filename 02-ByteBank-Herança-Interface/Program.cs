@@ -21,6 +21,8 @@ namespace _02_ByteBank_Herança_Interface
             program.CalcularBonificacao();
             */
 
+            UsarSistema();
+
             Console.ReadLine();
         }
 
@@ -32,6 +34,10 @@ namespace _02_ByteBank_Herança_Interface
             danilo.Nome = "Danilo";
             danilo.Senha = "123";
             sistemaInterno.Logar(danilo, "123");
+
+            ParceiroComercial parceiro = new ParceiroComercial();
+            parceiro.Senha = "123456";
+            sistemaInterno.Logar(parceiro, "123456");
         }
 
         //É preciso deixar o método como static para utilizar dentro no método Main

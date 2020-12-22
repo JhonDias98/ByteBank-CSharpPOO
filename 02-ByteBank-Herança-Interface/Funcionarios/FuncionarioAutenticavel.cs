@@ -1,17 +1,17 @@
-﻿using _02_ByteBank_Herança_Interface.Funcionarios;
+﻿using _02_ByteBank_Herança_Interface.Sistemas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _02_ByteBank_Herança_Interface.Sistemas
+namespace _02_ByteBank_Herança_Interface.Funcionarios
 {
-    public abstract class Autenticavel : Funcionario
+    public abstract class FuncionarioAutenticavel : Funcionario, IAutenticavel
     {
         public string Senha { get; set; }
 
-        public Autenticavel(double salario, string cpf) : base(salario, cpf)
+        public FuncionarioAutenticavel(double salario, string cpf) : base(salario, cpf)
         {
 
         }

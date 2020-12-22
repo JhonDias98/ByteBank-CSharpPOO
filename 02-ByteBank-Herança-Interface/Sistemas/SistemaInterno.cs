@@ -9,7 +9,7 @@ namespace _02_ByteBank_Herança_Interface.Sistemas
 {
     class SistemaInterno
     {
-        public bool Logar(Autenticavel funcionario, string senha)
+        public bool Logar(IAutenticavel funcionario, string senha)
         {
             bool usuarioAutenticado = funcionario.Autenticar(senha);
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _02_ByteBank_Herança_Interface.Funcionarios
 {
-    class GerenteDeConta : Autenticavel
+    class GerenteDeConta : FuncionarioAutenticavel
     {
         public GerenteDeConta(string cpf) : base(4000, cpf)
         {
