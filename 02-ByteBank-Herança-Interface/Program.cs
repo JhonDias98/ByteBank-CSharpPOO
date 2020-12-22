@@ -57,6 +57,9 @@ namespace _02_ByteBank_Herança_Interface
             GerenteDeConta jonathan = new GerenteDeConta("632.684.167-52");
             jonathan.Nome = "Jonathan";
 
+            Desenvolvedor jones = new Desenvolvedor("147.258.369-19");
+            jonathan.Nome = "Jonathan Dias";
+
             gerenciadorBonificacao.Registrar(danilo);
             gerenciadorBonificacao.Registrar(matheus);
             gerenciadorBonificacao.Registrar(ricardo);
