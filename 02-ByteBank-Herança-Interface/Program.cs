@@ -11,28 +11,42 @@ namespace _02_ByteBank_Herança_Interface
     {
         static void Main(string[] args)
         {
-            GerenciadorBonificacao gerenciador = new GerenciadorBonificacao();
+            //Se o método for static, usar da seguinte forma
+            CalcularBonificacao();
 
-            Funcionario jonathan = new Funcionario(2000, "456.123.789-19");
-            jonathan.Nome = "Jonathan";
-
-            gerenciador.Registrar(jonathan);
-
-            Diretor jones = new Diretor("852.741.963-91");
-            jones.Nome = "Jones";
-
-            gerenciador.Registrar(jones);
-
-            Console.WriteLine(jonathan.Nome);
-            Console.WriteLine(jonathan.GetBonificacao());
-
-            Console.WriteLine(jones.Nome);
-            Console.WriteLine(jones.GetBonificacao());
-
-            Console.WriteLine("Total de Bonificação: " + gerenciador.GetTotalBonificacao());
-
+            //Caso contrario, usar da seguinte maneira
+            /*
+            Program program = new Program();
+            program.CalcularBonificacao();
+            */
 
             Console.ReadLine();
+        }
+
+        //É preciso deixar o método como static para utilizar dentro no método Mian
+        public static void CalcularBonificacao()
+        {
+            GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();
+
+            Auxiliar danilo = new Auxiliar("587.321.964-98");
+            danilo.Nome = "Danilo";
+
+            Designer matheus = new Designer("632.874.963-78");
+            matheus.Nome = "Matheus";
+
+            Diretor ricardo = new Diretor("471.231.854-71");
+            ricardo.Nome = "Ricardo";
+
+            GerenteDeConta jonathan = new GerenteDeConta("632.684.167-52");
+            jonathan.Nome = "Jonathan";
+
+            gerenciadorBonificacao.Registrar(danilo);
+            gerenciadorBonificacao.Registrar(matheus);
+            gerenciadorBonificacao.Registrar(ricardo);
+            gerenciadorBonificacao.Registrar(jonathan);
+
+            Console.WriteLine("Total de bonificações do mês: " + 
+                gerenciadorBonificacao.GetTotalBonificacao());
         }
     }
 }

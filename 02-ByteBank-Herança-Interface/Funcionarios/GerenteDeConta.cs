@@ -6,21 +6,20 @@ using System.Threading.Tasks;
 
 namespace _02_ByteBank_Herança_Interface.Funcionarios
 {
-    //Usar ':' para herança
-    class Diretor : Funcionario
+    class GerenteDeConta : Funcionario
     {
-        public Diretor( string cpf) : base(5000, cpf) { }
+        public GerenteDeConta(string cpf) : base(4000, cpf)
+        {
+        }
 
         public override void AumentarSalario()
         {
-            Salario *= 1.15;
+            Salario *= 1.05;
         }
 
-        //Override sobreescreve o método
         public override double GetBonificacao()
         {
-            //Base faz referência a classe pai 
-            return Salario * 0.5;
+            return Salario *= 0.25;
         }
     }
 }
