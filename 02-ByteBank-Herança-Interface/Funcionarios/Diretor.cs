@@ -17,11 +17,6 @@ namespace _02_ByteBank_Herança_Interface.Funcionarios
             Salario *= 1.15;
         }
 
-        public bool Autenticar(string senha)
-        {
-            return Senha == senha;
-        }
-
         //Override sobreescreve o método
         public override double GetBonificacao()
         {
