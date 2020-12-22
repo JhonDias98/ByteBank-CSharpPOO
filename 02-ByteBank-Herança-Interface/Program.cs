@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using _02_ByteBank_Herança_Interface.Funcionarios;
+using _02_ByteBank_Herança_Interface.Sistemas;
 
 namespace _02_ByteBank_Herança_Interface
 {
@@ -23,7 +24,17 @@ namespace _02_ByteBank_Herança_Interface
             Console.ReadLine();
         }
 
-        //É preciso deixar o método como static para utilizar dentro no método Mian
+        public static void UsarSistema()
+        {
+            SistemaInterno sistemaInterno = new SistemaInterno();
+
+            Diretor danilo = new Diretor("623.171.854-71");
+            danilo.Nome = "Danilo";
+            danilo.Senha = "123";
+            sistemaInterno.Logar(danilo, "123");
+        }
+
+        //É preciso deixar o método como static para utilizar dentro no método Main
         public static void CalcularBonificacao()
         {
             GerenciadorBonificacao gerenciadorBonificacao = new GerenciadorBonificacao();

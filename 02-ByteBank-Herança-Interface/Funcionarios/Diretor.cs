@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _02_ByteBank_Herança_Interface.Sistemas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 namespace _02_ByteBank_Herança_Interface.Funcionarios
 {
     //Usar ':' para herança
-    class Diretor : Funcionario
+    class Diretor : Autenticavel
     {
-        public Diretor( string cpf) : base(5000, cpf) { }
+        public Diretor(string cpf) : base(5000, cpf) { }
 
         public override void AumentarSalario()
         {
